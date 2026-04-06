@@ -1,0 +1,27 @@
+task-name	task-acc	sample-count
+Positional Count	0.33	100
+Shape Sorting	0.83	100
+Stack Count	0.45	100
+Pie Chart	0.77	100
+Chart Comparison	0.51	100
+Venn Diagram Count	0.62	100
+Shape Counting	0.67	100
+Tiles Line Length	0.16	100
+Tiles Line Intersections	0.18	100
+Tiles Recoloring	0.14	100
+Mirror Identification	0.59	100
+Symmetry Fill	0.41	100
+Frieze Groups	0.24	100
+Wallpaper Groups	0.53	100
+Transform Result Identify	0.43	100
+Transform Pair Infer	0.3	100
+Transform Similarity Identify	0.27	100
+Sequence Rotation	0.29	100
+Sequence Arithmetic	0.42	100
+Sequence Multi-Column Arithmetic	0.22	100
+Tiles Geometry	0.33	100
+Tiles Connected Component	0.35	100
+Tiles Shortest Path	0.26	100
+Missing Tiles	0.3	100
+Tiles Composition	0.38	100
+Overall	0.3992	2500

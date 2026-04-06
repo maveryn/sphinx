@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SPHINX Interactive Demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../static/demo.css?v=ff633f8001" />
+  </head>
+  <body>
+    <main class="demo-shell">
+      <header class="demo-header">
+        <a class="demo-back-link" href="../">Back to project page</a>
+        <p class="demo-kicker">Interactive Demo</p>
+        <h1>SPHINX Interactive Demo</h1>
+          <p class="demo-subtitle">Explore a balanced 200-example subset from the SPHINX evaluation split.</p>
+          <p class="demo-intro">Compare cached GPT-5 and GPT-5 Mini responses side by side, or answer the questions yourself and track your score against the same subset.</p>
+        <div id="demo-summary-pills" class="demo-summary-pills"></div>
+      </header>
+
+      <section class="demo-panel">
+        <div class="demo-toolbar">
+          <div id="demo-mode-tabs" class="demo-mode-tabs" role="tablist" aria-label="Demo modes"></div>
+          <div id="demo-toolbar-meta" class="demo-toolbar-meta">
+            <span id="demo-index" class="demo-index">Example 1</span>
+            <div class="demo-actions">
+              <button id="demo-random" type="button">Random Example</button>
+              <button id="demo-next" type="button">Next</button>
+            </div>
+          </div>
+        </div>
+
+        <section class="demo-stage">
+          <div id="demo-stage-layout" class="demo-stage-layout">
+            <div class="demo-stage-media">
+              <div id="demo-media" class="demo-media"></div>
+            </div>
+            <div class="demo-stage-copy">
+              <h2 id="demo-title"></h2>
+              <p id="demo-prompt" class="demo-prompt"></p>
+              <section class="demo-section demo-stage-answer" id="demo-compare-answer-section" hidden>
+                <h4>Ground truth</h4>
+                <div id="demo-compare-answer" class="demo-answer-card"></div>
+              </section>
+            </div>
+          </div>
+        </section>
+
+        <section id="demo-compare-panel" class="demo-mode-panel" hidden>
+          <div class="demo-section-head">
+            <div>
+              <p class="demo-section-kicker">Compare</p>
+              <h3>Model responses</h3>
+            </div>
+            <div id="demo-model-selector" class="demo-model-selector"></div>
+          </div>
+          <div id="demo-compare-predictions" class="demo-predictions compare-grid"></div>
+        </section>
+
+        <section id="demo-quiz-panel" class="demo-mode-panel" hidden>
+          <div class="demo-section-head">
+            <div>
+              <p class="demo-section-kicker">Quiz</p>
+              <h3>Your answer</h3>
+            </div>
+            <div id="demo-quiz-stats" class="demo-quiz-stats"></div>
+          </div>
+
+          <form id="demo-form" class="demo-form">
+            <div id="demo-input-area"></div>
+            <div class="demo-actions demo-actions--quiz">
+              <button id="demo-check" type="submit">Check Answer</button>
+            </div>
+          </form>
+
+          <div id="demo-feedback" class="demo-feedback" hidden></div>
+
+          <section class="demo-section" id="demo-answer-section" hidden>
+            <h4>Ground truth</h4>
+            <div id="demo-answer" class="demo-answer-card"></div>
+          </section>
+
+          <section class="demo-section" id="demo-quiz-model-section" hidden>
+            <div class="demo-section-head compact">
+              <div>
+                <p class="demo-section-kicker">Model</p>
+                <h4 id="demo-quiz-model-heading">Model response</h4>
+              </div>
+            </div>
+            <div id="demo-quiz-model-card" class="demo-predictions single-card"></div>
+          </section>
+        </section>
+      </section>
+    </main>
+
+    <script>
+      window.PAPERPAGE_DEMO = {
+        examplesUrl: "../assets/demo/examples.json?v=8d1a1dac28",
+        showModelPredictions: true,
+        modes: ["compare", "quiz"],
+        defaultMode: "compare",
+        availableModels: ["GPT-5", "GPT-5 Mini"],
+        defaultCompareModels: ["GPT-5", "GPT-5 Mini"],
+        quizRevealModel: "GPT-5"
+      };
+    </script>
+    <script src="../static/demo.js?v=8d932d845c"></script>
+  </body>
+</html>

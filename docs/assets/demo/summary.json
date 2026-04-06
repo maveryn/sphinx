@@ -1,0 +1,53 @@
+{
+  "dataset": "xashru/sphinx",
+  "split": "eval",
+  "samples_per_task": 8,
+  "total_examples": 200,
+  "tasks": {
+    "charts_match_proportions": 8,
+    "charts_pie": 8,
+    "geometric_position": 8,
+    "geometric_sort": 8,
+    "geometric_stack_count": 8,
+    "rect_venn": 8,
+    "sequence_arithmetic": 8,
+    "sequence_multi_column_arithmetic": 8,
+    "sequence_rotation": 8,
+    "shape_count": 8,
+    "symmetry_frieze_groups": 8,
+    "symmetry_grid_mirror_fill": 8,
+    "symmetry_scene_mirror_identify": 8,
+    "symmetry_wallpaper_groups": 8,
+    "tiles_connected_component": 8,
+    "tiles_decompose_compose": 8,
+    "tiles_geometry": 8,
+    "tiles_line_intersections": 8,
+    "tiles_line_length": 8,
+    "tiles_missing_tiles": 8,
+    "tiles_recoloring": 8,
+    "tiles_shortest_path": 8,
+    "transform_pair_infer": 8,
+    "transform_result_identify": 8,
+    "transform_similarity_identify": 8
+  },
+  "models": [
+    "GPT-5",
+    "GPT-5 Mini"
+  ],
+  "model_summary": {
+    "GPT-5": {
+      "correct": 104,
+      "total": 200,
+      "accuracy": 0.52
+    },
+    "GPT-5 Mini": {
+      "correct": 95,
+      "total": 200,
+      "accuracy": 0.475
+    }
+  },
+  "default_compare_models": [
+    "GPT-5",
+    "GPT-5 Mini"
+  ]
+}

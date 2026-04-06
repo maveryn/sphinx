@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sphinx-vpr"
+version = "0.1.0"
+description = "SPHINX: a synthetic environment for visual perception and reasoning"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+dependencies = [
+  "Pillow>=9.0",
+  "PyYAML>=6.0",
+  "cairosvg>=2.7.0",
+  "tqdm>=4.66.0",
+  "datasets>=2.14.0",
+  "openpyxl>=3.1.2",
+  "numpy>=1.24",
+]
+
+[project.scripts]
+sphinx-generate = "sphinx.generate:main"
+sphinx-smoke = "sphinx.smoke:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+sphinx = [
+  "icons/*.yaml",
+  "icons/*.txt",
+  "icons/svgs/*.svg",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

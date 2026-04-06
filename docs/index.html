@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sphinx: A Synthetic Environment for Visual Perception and Reasoning | Project Page</title>
+  <meta name="description" content="We present Sphinx, a synthetic environment for visual perception and reasoning that targets core cognitive primitives. Sphinx procedurally generates puzzles using motifs, tiles, charts, icons, and geometric primitives, each paired with verifiable ground-truth solutions, enabling both precise evaluation and large-scale dataset construction. The benchmark covers 25 task types spanning symmetry detection, geometric transformations, spatial reasoning, chart interpretation, and sequence prediction. Evaluating recent large vision–language models (LVLMs) shows that even state-of-the-art GPT-5 attains only 51.1% accuracy, well below human performance. Finally, we demonstrate that reinforcement learning with verifiable rewards (RLVR) substantially improves model accuracy on these tasks and yields gains on external visual reasoning benchmarks, highlighting its promise for advancing multimodal reasoning.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="static/index.css?v=4af6b1436d">
+</head>
+<body>
+  <section class="hero paperpage-hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="paperpage-hero-header">
+          <h1 class="title is-1 publication-title">Sphinx: A Synthetic Environment for Visual Perception and Reasoning</h1>
+            <div class="publication-authors">
+                <span class="author-block">
+                  Md Tanvirul Alam
+                    <sup class="author-affiliation-sup">1</sup>
+                </span><span class="author-sep">·</span>                <span class="author-block">
+                  Saksham Aggarwal
+                    <sup class="author-affiliation-sup">1</sup>
+                </span><span class="author-sep">·</span>                <span class="author-block">
+                  Justin Yang Chae
+                    <sup class="author-affiliation-sup">2</sup>
+                </span><span class="author-sep">·</span>                <span class="author-block">
+                  Nidhi Rastogi
+                    <sup class="author-affiliation-sup">1</sup>
+                </span>            </div>
+            <div class="paperpage-affiliations">
+                <span class="paperpage-affiliation">
+                    <sup class="paperpage-affiliation-sup">1</sup>
+                  Rochester Institute of Technology
+                </span><span class="author-sep">·</span>                <span class="paperpage-affiliation">
+                    <sup class="paperpage-affiliation-sup">2</sup>
+                  University of Washington
+                </span>            </div>
+            <p class="paperpage-eyebrow">
+                2026 IEEE/CVF Conference on Computer Vision and Pattern Recognition- FINDINGS Track (CVPRF)
+            </p>
+
+          <div class="publication-links">
+                <span class="link-block">
+                  <a href="assets/pdfs/main.pdf?v=437446141f" class="button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://github.com/maveryn/sphinx" class="button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="demo/" class="button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fas fa-link"></i>
+                    </span>
+                    <span>Demo</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://huggingface.co/collections/maveryn/sphinx-models" class="button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fas fa-link"></i>
+                    </span>
+                    <span>Models</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2511.20814" class="button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fas fa-link"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://huggingface.co/datasets/maveryn/sphinx" class="button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fas fa-database"></i>
+                    </span>
+                    <span>Dataset</span>
+                  </a>
+                </span>
+          </div>
+
+        </div>
+
+
+          <div class="paperpage-detail-wrap">
+            <div class="paperpage-detail-grid">
+                <article class="paperpage-detail-card">
+                    <div class="paperpage-detail-image-wrap">
+                      <img src="assets/figures/task_cards/positional_count.png?v=7c4355b745" alt="Positional Count" class="paperpage-detail-image">
+                    </div>
+                    <h3 class="paperpage-detail-title">Positional Count</h3>
+                    <p class="paperpage-detail-line">
+<span class="paperpage-detail-label">Q:</span>                      <span>What is the total number of triangles strictly below the red triangle (below its bottommost point)?</span>
+                    </p>
+                    <p class="paperpage-detail-line">
+<span class="paperpage-detail-label">A:</span>                      <span>5</span>
+                    </p>
+                </article>
+                <article class="paperpage-detail-card">
+                    <div class="paperpage-detail-image-wrap">
+                      <img src="assets/figures/task_cards/chart_comparison.png?v=5d6034824b" alt="Chart Comparison" class="paperpage-detail-image">
+                    </div>
+                    <h3 class="paperpage-detail-title">Chart Comparison</h3>
+                    <p class="paperpage-detail-line">
+<span class="paperpage-detail-label">Q:</span>                      <span>The top diagram is a bar chart. The bottom row contains four pie charts. Which pie chart matches the same proportional breakdown by color as the bar chart?</span>
+                    </p>
+                    <p class="paperpage-detail-line">
+<span class="paperpage-detail-label">A:</span>                      <span>(b)</span>
+                    </p>
+                </article>
+                <article class="paperpage-detail-card">
+                    <div class="paperpage-detail-image-wrap">
+                      <img src="assets/figures/task_cards/missing_tiles.png?v=1b8b57e54e" alt="Missing Tiles" class="paperpage-detail-image">
+                    </div>
+                    <h3 class="paperpage-detail-title">Missing Tiles</h3>
+                    <p class="paperpage-detail-line">
+<span class="paperpage-detail-label">Q:</span>                      <span>Look at the top image: one region is uncolored. Which option (a)-(d) provides the exact missing colors?</span>
+                    </p>
+                    <p class="paperpage-detail-line">
+<span class="paperpage-detail-label">A:</span>                      <span>(d)</span>
+                    </p>
+                </article>
+                <article class="paperpage-detail-card">
+                    <div class="paperpage-detail-image-wrap">
+                      <img src="assets/figures/task_cards/sequence_rotation.png?v=fb0dc46ee7" alt="Sequence Rotation" class="paperpage-detail-image">
+                    </div>
+                    <h3 class="paperpage-detail-title">Sequence Rotation</h3>
+                    <p class="paperpage-detail-line">
+<span class="paperpage-detail-label">Q:</span>                      <span>In the top row, the motif rotates by a constant angle each step. Which option (a)-(d) below fills the blank?</span>
+                    </p>
+                    <p class="paperpage-detail-line">
+<span class="paperpage-detail-label">A:</span>                      <span>(b)</span>
+                    </p>
+                </article>
+                <article class="paperpage-detail-card">
+                    <div class="paperpage-detail-image-wrap">
+                      <img src="assets/figures/task_cards/tiles_recoloring.png?v=3db70dd798" alt="Tiles Recoloring" class="paperpage-detail-image">
+                    </div>
+                    <h3 class="paperpage-detail-title">Tiles Recoloring</h3>
+                    <p class="paperpage-detail-line">
+<span class="paperpage-detail-label">Q:</span>                      <span>Two tiles are shown (left/right). A cell counts as different if its color differs, including filled versus blank. How many cells differ?</span>
+                    </p>
+                    <p class="paperpage-detail-line">
+<span class="paperpage-detail-label">A:</span>                      <span>5</span>
+                    </p>
+                </article>
+                <article class="paperpage-detail-card">
+                    <div class="paperpage-detail-image-wrap">
+                      <img src="assets/figures/task_cards/transform_pair_infer.png?v=48b7b00652" alt="Transform Pair Infer" class="paperpage-detail-image">
+                    </div>
+                    <h3 class="paperpage-detail-title">Transform Pair Infer</h3>
+                    <p class="paperpage-detail-line">
+<span class="paperpage-detail-label">Q:</span>                      <span>Identify the transformation applied between the left and right images.</span>
+                    </p>
+                    <p class="paperpage-detail-line">
+<span class="paperpage-detail-label">A:</span>                      <span>(c) reflect across the anti-diagonal</span>
+                    </p>
+                </article>
+            </div>
+          </div>
+
+          <div class="paperpage-summary-wrap">
+            <p class="paperpage-summary">We present Sphinx, a synthetic environment for visual perception and reasoning that targets core cognitive primitives. Sphinx procedurally generates puzzles using motifs, tiles, charts, icons, and geometric primitives, each paired with verifiable ground-truth solutions, enabling both precise evaluation and large-scale dataset construction.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <section class="section paperpage-abstract">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>We present Sphinx, a synthetic environment for visual perception and reasoning that targets core cognitive primitives. Sphinx procedurally generates puzzles using motifs, tiles, charts, icons, and geometric primitives, each paired with verifiable ground-truth solutions, enabling both precise evaluation and large-scale dataset construction. The benchmark covers 25 task types spanning symmetry detection, geometric transformations, spatial reasoning, chart interpretation, and sequence prediction. Evaluating recent large vision–language models (LVLMs) shows that even state-of-the-art GPT-5 attains only 51.1% accuracy, well below human performance. Finally, we demonstrate that reinforcement learning with verifiable rewards (RLVR) substantially improves model accuracy on these tasks and yields gains on external visual reasoning benchmarks, highlighting its promise for advancing multimodal reasoning.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+      <section class="section">
+        <div class="container is-max-desktop">
+          <h2 class="title is-3">Highlights</h2>
+        <div class="paperpage-highlight-grid">
+              <article class="paperpage-highlight-card">
+                <p>A synthetic environment with 25 procedurally generated visual perception and reasoning tasks grounded in verifiable answers.</p>
+              </article>
+              <article class="paperpage-highlight-card">
+                <p>A benchmark showing a large human-model gap, with GPT-5 reaching 51.1% accuracy against 75.8% human performance.</p>
+              </article>
+              <article class="paperpage-highlight-card">
+                <p>RLVR on SPHINX improves multimodal reasoning and transfers to external visual reasoning benchmarks.</p>
+              </article>
+        </div>
+      </div>
+      </section>
+
+      <section class="section paperpage-story">
+        <div class="container is-max-desktop">
+          <h2 class="title is-3">Design</h2>
+            <div class="paperpage-story-stack">
+                <div class="paperpage-visual-stack">
+                    <div class="paperpage-gallery-card paperpage-gallery-card--wide">
+                      <img src="assets/figures/design_motifs.png?v=2ff2da8e8e" alt="Design">
+                    </div>
+                    <div class="paperpage-gallery-card paperpage-gallery-card--wide">
+                      <img src="assets/figures/design_tilings.png?v=9e84ce5dab" alt="Design">
+                    </div>
+                </div>
+              <div class="paperpage-story-text paperpage-story-text--stacked">
+                <p>Sphinx is a modular synthetic environment that composes motifs, tilings, charts, icons, and geometric primitives into visual reasoning puzzles with verifiable answers. The framework supports 25 task types spanning symmetry, spatial reasoning, chart interpretation, transformations, and sequence prediction, enabling both controlled evaluation and large-scale dataset generation.</p>
+              </div>
+            </div>
+        </div>
+      </section>
+      <section class="section paperpage-story">
+        <div class="container is-max-desktop">
+          <h2 class="title is-3">Benchmark</h2>
+            <div class="paperpage-story-stack">
+                <div class="paperpage-visual-stack">
+                    <div class="paperpage-gallery-card paperpage-gallery-card--wide">
+                      <img src="assets/figures/benchmark_table.png?v=555d7e91e0" alt="Benchmark">
+                    </div>
+                </div>
+              <div class="paperpage-story-text paperpage-story-text--stacked">
+                <p>The benchmark contains 2,500 examples across 25 tasks and exposes a large gap between humans and frontier LVLMs. GPT-5 reaches 51.1% accuracy versus 75.8% for humans, with especially large weaknesses on symmetry, sequential reasoning, and transformation-heavy tasks.</p>
+              </div>
+            </div>
+        </div>
+      </section>
+      <section class="section paperpage-story">
+        <div class="container is-max-desktop">
+          <h2 class="title is-3">Analysis</h2>
+            <div class="paperpage-story-stack">
+                <div class="paperpage-visual-stack">
+                    <div class="paperpage-gallery-card paperpage-gallery-card--wide">
+                      <img src="assets/figures/gpt5_vs_human_top5_diffs_side_by_side_2.png?v=fde7866d43" alt="Analysis">
+                    </div>
+                    <div class="paperpage-gallery-card paperpage-gallery-card--wide">
+                      <img src="assets/figures/gpt5_vs_mini_top5_diffs_side_by_side_2.png?v=82f914463d" alt="Analysis">
+                    </div>
+                </div>
+              <div class="paperpage-story-text paperpage-story-text--stacked">
+                <p>Per-task comparisons show that failure modes are highly structured rather than uniform across the benchmark. Humans retain strong advantages on several tasks grounded in explicit spatial and transformational reasoning, while model-to-model differences reveal substantial variation in what current LVLMs can solve reliably.</p>
+              </div>
+            </div>
+        </div>
+      </section>
+      <section class="section paperpage-story">
+        <div class="container is-max-desktop">
+          <h2 class="title is-3">Reinforcement Learning</h2>
+            <div class="paperpage-story-stack">
+                <div class="paperpage-visual-stack">
+                    <div class="paperpage-gallery-card paperpage-gallery-card--wide">
+                      <img src="assets/figures/rl_sphinx_table.png?v=d9375dfcfa" alt="Reinforcement Learning">
+                    </div>
+                    <div class="paperpage-gallery-card paperpage-gallery-card--wide">
+                      <img src="assets/figures/rl_external_table.png?v=269127a011" alt="Reinforcement Learning">
+                    </div>
+                </div>
+              <div class="paperpage-story-text paperpage-story-text--stacked">
+                <p>Reinforcement learning with verifiable rewards substantially improves the Qwen3 models on both SPHINX and external multimodal reasoning benchmarks. The strongest gains come from the Qwen3-VL-4B and Qwen3-VL-8B families, with consistent improvements across held-out SPHINX tasks and the math-oriented transfer benchmarks.</p>
+              </div>
+            </div>
+        </div>
+      </section>
+
+    <section class="section" id="BibTeX">
+      <div class="container is-max-desktop content">
+        <div class="paperpage-bibtex-header">
+          <h2 class="title is-3">BibTeX</h2>
+          <button class="button is-light is-small paperpage-copy-btn" onclick="copyBibTeX()">
+            <span class="icon"><i class="fas fa-copy"></i></span>
+            <span>Copy</span>
+          </button>
+        </div>
+        <pre id="bibtex-code"><code>@inproceedings{alam2026sphinx,
+  title={Sphinx: A Synthetic Environment for Visual Perception and Reasoning},
+  author={Md Tanvirul Alam and Saksham Aggarwal and Justin Yang Chae and Nidhi Rastogi},
+  booktitle={2026 IEEE/CVF Conference on Computer Vision and Pattern Recognition- FINDINGS Track (CVPRF)},
+  year={2026},
+}
+</code></pre>
+      </div>
+    </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This page was generated with <strong>paperpage</strong> and is styled after the
+              <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank" rel="noopener noreferrer">Academic Project Page Template</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="static/index.js?v=5d306058b4"></script>
+</body>
+</html>
