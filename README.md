@@ -147,9 +147,10 @@ If you use SPHINX, please cite:
 
 ```bibtex
 @inproceedings{alam2026sphinx,
-  author    = {Md Tanvirul Alam and Saksham Aggarwal and Justin Yang Chae and Nidhi Rastogi},
-  title     = {SPHINX: A Synthetic Environment for Visual Perception and Reasoning},
-  booktitle = {2026 IEEE/CVF Conference on Computer Vision and Pattern Recognition- FINDINGS Track (CVPRF)},
-  year      = {2026}
+  title={SPHINX: A Synthetic Environment for Visual Perception and Reasoning},
+  author={Alam, Md Tanvirul and Aggarwal, Saksham and Chae, Justin Yang and Rastogi, Nidhi},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={9489--9499},
+  year={2026}
 }
 ```
