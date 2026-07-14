@@ -51,9 +51,6 @@ models.
 | `tests/` | Registry and generation smoke tests |
 | `docs/` | Generated project page and interactive demo for GitHub Pages |
 
-This repo is intentionally scoped to the 25 SPHINX benchmark tasks. Scratch
-tasks, unused benchmark scripts, and extra source notes from the original
-`mmr_gym` workspace are not included.
 
 ## Installation
 
